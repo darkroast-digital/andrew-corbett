@@ -1,0 +1,138 @@
+//
+//
+// Buttons
+//
+//
+
+@mixin button($button, $bg: $c-primary, $c: $c-white) {
+  @if $button == flat {
+   	position: relative;
+   	display: inline-block;
+		padding: .5rem 2.5rem;
+		border-radius: 3px;
+		color: $c;
+		font-family: $g-font-one;
+		font-weight: 600;
+		background: $bg;	
+		border: solid 1px $bg;
+		@include transition($e: $easeInOutQuad);
+		text-transform: uppercase;
+		
+		&:hover {
+			background: $c-grey-dark;
+			border-color: $c-grey-dark;
+		}
+  }
+	
+  @else if $button == raised {
+		position: relative;
+   	display: inline-block;
+		padding: .5rem 2.5rem;
+		border-radius: 3px;
+		color: $c;
+		font-family: $g-font-one;
+		font-weight: 600;
+		background: $bg;	
+		border: solid 1px $bg;
+		@include transition($e: $easeInOutQuad);
+		text-transform: uppercase;
+		@include shadow(raised);
+		
+		&:hover {
+			background: $c-grey-dark;
+			border-color: $c-grey-dark;
+			color: $c;
+		}
+  }
+	
+	@else if $button == shadow {
+		position: relative;
+   	display: inline-block;
+		padding: .5rem 2.5rem;
+		border-radius: 3px;
+		color: $c;
+		font-family: $g-font-one;
+		font-weight: 600;
+		background: $bg;	
+		border: solid 1px $bg;
+		@include transition($e: $easeInOutQuad);
+		text-transform: uppercase;
+		@include shadow(normal);
+		
+		&:hover {
+			background: $c-grey-dark;
+			border-color: $c-grey-dark;
+			color: $c;
+		}
+  }
+	
+	@else if $button == ghost {
+		position: relative;
+   	display: inline-block;
+		padding: .5rem 2.5rem;
+		border-radius: 3px; 
+		color: $c-primary;
+		font-family: $g-font-one;
+		font-weight: 600;
+		background: transparent;	
+		border: solid 1px $bg;
+		@include transition($e: $easeInOutQuad);
+		text-transform: uppercase;
+		
+		&:hover {
+			background: $bg;
+			border-color: $bg;
+			color: $c;
+		}
+  }
+	
+		@else if $button == invisible {
+		position: relative;
+   	display: inline-block;
+		padding: .5rem 2.5rem;
+		border-radius: 3px;
+		color: $c;
+		font-family: $g-font-one;
+		font-weight: 600;
+		background: transparent;	
+		border: solid 1px transparent;
+		@include transition($e: $easeInOutQuad);
+		text-transform: uppercase;
+		
+		&:hover {
+			color: $c-font;
+		}
+  }
+}
+
+//
+//
+// Decalre Buttons
+//
+//
+
+.button {
+	@include button(flat);
+}
+
+.button-raised {
+	@include button(raised)
+}
+
+.button-shadow {
+	@include button(shadow)
+}
+
+.button-ghost {
+	@include button(ghost)
+}
+
+.button-ghost {
+	@include button(invisible)
+}
+
+button {
+	@include button(flat);
+	outline: none;
+	cursor: pointer;
+}

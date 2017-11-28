@@ -1,0 +1,116 @@
+.hero {
+	background: $c-primary;
+	background-image: url('/assets/img/hero-bg.jpg'); 
+	@include cover();
+	@include hw();
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+
+	&-portrait {
+		position: relative;
+		z-index: 80;
+		max-height: 90vh;
+		pointer-events: none;
+
+		@include mq(xl) {
+			min-height: 90vh;
+		}
+
+		@include mq(m) {
+			right: -100px;
+		}
+	}
+	
+	&__content {
+		position: relative;
+		pointer-events: none;
+		z-index: 10;
+		max-width: 1200px;
+		width: 1200px;
+		height: 100%;
+		padding-top: 10rem;
+		display: flex;
+		align-items: flex-end;
+
+		@include mq(m) {
+			z-index: 20;
+			max-width: 100%;
+			width: 100%;
+		}
+		
+		h1 {
+			text-transform: uppercase;
+			color: $c-primary;
+			margin-bottom: 0;
+			text-shadow: 0 0 15px rgba($c-black, .8);
+			font-size: $h1 * 2;
+			margin-bottom: 7rem;
+
+			@include mq(m) {
+				position: absolute;
+				font-size: $h1;
+				line-height: 1;
+				bottom: 0rem;
+				left: 2rem;
+				z-index: 90;
+			}
+			
+			span {
+				display: block;
+				color: $c-white;
+				margin-top: 4rem;
+				font-size: $h1 * 2.5;
+
+				@include mq(m) {
+					font-size: $h1;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	&-footer {
+		width: 100%;
+		background: $c-white;
+		padding: 2rem;
+		position: absolute;
+		z-index: 10;
+		bottom: 0;
+
+		@include mq(m){
+			padding: 1rem 0;
+			z-index: 30;
+		}
+
+		&__content {
+			@include row();
+			justify-content: space-between;
+			font-size: $h4;
+			text-transform: uppercase;
+
+			@include mq(m) {
+				display: flex;
+				font-size: 1rem;
+			}
+
+			li {
+				font-weight: 300;
+
+				&:nth-of-type(odd) {
+					color: $c-primary;
+				}
+				@include mq(m) {
+					margin-right: .5rem;
+					font-size: .8rem;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

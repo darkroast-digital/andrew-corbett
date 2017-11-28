@@ -1,0 +1,46 @@
+///* ========================================================================
+//   #GLOBAL FONTS
+//   ======================================================================== */
+
+  // Globably Scoped Fonts
+
+// ROBOTO
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+// Declare Font Variables
+
+$g-font-one: 'Roboto';
+$g-font-two: 'Roboto';
+$g-font-mono: 'Roboto';
+
+// Apply Fonts To Elements
+
+html {
+	font-family: $g-font-two;
+	color: $c-font;
+}
+
+body {
+	font-family: $g-font-two;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $g-font-one;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: $g-font-mono;
+}
+
+a {
+	font-family: $g-font-one;
+}
